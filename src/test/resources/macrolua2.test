@@ -1,0 +1,17 @@
+.runTransformations
+.#-----------------------------------------------------
+.input|xwiki/2.0
+.# Verify lua macro does not fail with null content
+.#-----------------------------------------------------
+{{lua/}}{{lua}}{{/lua}}
+.#-----------------------------------------------------
+.expect|event/1.0
+.#-----------------------------------------------------
+beginDocument
+beginParagraph
+beginMacroMarkerInline [lua] []
+endMacroMarkerInline [lua] []
+beginMacroMarkerInline [lua] [] []
+endMacroMarkerInline [lua] [] []
+endParagraph
+endDocument
